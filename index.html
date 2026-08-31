@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Μη φοβάσαι να πετάξεις - Βοήθεια κατά την Αεροφοβία</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Bar - Offline Mode & Flight Preparation -->
+    <div class="top-bar">
+        <div class="offline-status">
+            <span class="status-dot"></span>
+            ✈️ Λειτουργία Χωρίς Σύνδεση: Ενεργή
+        </div>
+        <div class="flight-prep-badge" id="flightPrepBadge">
+            📋 Προετοιμασία
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Μη φοβάσαι να πετάξεις</h1>
+            <p>Οδηγός αυτοβοήθειας σε πραγματικό χρόνο</p>
+        </div>
+
+        <!-- Flight Preparation Panel (Hidden by default) -->
+        <div class="flight-prep-panel" id="flightPrepPanel" style="display: none;">
+            <div class="prep-header">
+                <h2>📋 Προετοιμασία για την Πτήση</h2>
+                <button class="close-prep-btn" id="closePrepBtn">✕</button>
+            </div>
+            <div class="prep-content">
+                <div class="prep-section">
+                    <h3>✈️ Πριν από την Πτήση</h3>
+                    <ul>
+                        <li>Κοιμήσου καλά τη νύχτα πριν</li>
+                        <li>Αποφύγετε την καφεΐνη και τα αλκοολούχα ποτά</li>
+                        <li>Έλεγχος του αεροσκάφους είναι δυνατό - ζητήστε ένα γύρο</li>
+                        <li>Μιλήστε με το πλήρωμα για τον φόβο σας</li>
+                    </ul>
+                </div>
+                <div class="prep-section">
+                    <h3>🎧 Στο αεροπλάνο</h3>
+                    <ul>
+                        <li>Ακούστε μουσική ή ένα podcast που σας ηρεμεί</li>
+                        <li>Κάθεστε κοντά σε συνταξιδιώτη που σας κάνει να νιώθετε ασφαλές</li>
+                        <li>Αποφύγετε το παράθυρο αν σας κάνει άγχος (ή κοιτάξτε το και ηρεμήστε)</li>
+                        <li>Φορέστε άνετα ρούχα</li>
+                    </ul>
+                </div>
+                <div class="prep-section">
+                    <h3>💪 Τεχνικές Ηρεμίας</h3>
+                    <ul>
+                        <li>Μυϊκή χαλάρωση: τεντώστε και χαλαρώστε κάθε μυ</li>
+                        <li>Μέθοδος 5-4-3-2-1: αναγνωρίστε 5 πράγματα που βλέπετε</li>
+                        <li>Διαδοχική χαλάρωση μυών</li>
+                        <li>Θετικές προσιτές (π.χ. "Είμαι ασφαλής")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Response Area -->
+        <div class="response-area" id="responseArea">
+            <div class="welcome-message">
+                <p>Καλώς ήρθες! Είμαι εδώ για να σε στηρίξω κατά τη διάρκεια της πτήσης σου.</p>
+                <p>Όταν νιώσεις πανικό, πάτησε το κουμπί ή πες μου τι νιώθεις.</p>
+            </div>
+        </div>
+
+        <!-- Real-time Support Panel -->
+        <div class="realtime-support" id="realtimeSupport">
+            <div class="support-header">Υποστήριξη σε Πραγματικό Χρόνο</div>
+            <div class="support-content" id="supportContent">
+                <p>Έτοιμη να σε βοηθήσω όποτε χρειαστείς</p>
+            </div>
+        </div>
+
+        <!-- Breathing Exercise Container (Hidden by default) -->
+        <div class="breathing-container" id="breathingContainer" style="display: none;">
+            <div class="breathing-circle" id="breathingCircle">
+                <span id="breathingText">Εισπνοή</span>
+            </div>
+            <div class="breathing-instructions">
+                <p id="breathingInstructions">Εισπνοή: 4 δευτερόλεπτα</p>
+            </div>
+            <button class="close-btn" id="closeBreathingBtn">✕</button>
+        </div>
+
+        <!-- Panic Button -->
+        <div class="button-container">
+            <button class="panic-button" id="panicBtn">
+                Έχω Πανικό
+            </button>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="action-btn" id="breathingQuickBtn" title="Άσκηση αναπνοής">
+                🫁 Αναπνοή
+            </button>
+            <button class="action-btn" id="techniqueBtn" title="Τεχνικές χαλάρωσης">
+                🧘 Τεχνικές
+            </button>
+            <button class="action-btn" id="factsBtn" title="Γεγονότα ασφάλειας">
+                📊 Γεγονότα
+            </button>
+        </div>
+
+        <!-- Chat Input Box -->
+        <div class="chat-input-container">
+            <input 
+                type="text" 
+                id="chatInput" 
+                class="chat-input" 
+                placeholder="Πες μου τι νιώθεις..."
+                autocomplete="off"
+            >
+            <button class="send-btn" id="sendBtn">Αποστολή</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
